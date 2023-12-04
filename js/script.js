@@ -1,4 +1,9 @@
-function toggleMenu() {
-  const toggleMenu = document.querySelector(".menu");
-  toggleMenu.classList.toggle("active");
-}
+const progress = document.querySelector(".progress-bar");
+
+window.addEventListener("scroll", () => {
+  const winScroll = window.pageYOffset;
+  const height = document.documentElement.scrollHeight - window.innerHeight;
+
+  const scrolled = (winScroll/height) * 100;
+  progress.style.width = `${scrolled}%`;
+});
